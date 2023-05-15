@@ -1,0 +1,33 @@
+public class Exp {
+	
+	public static void main(String[] args) {
+		ListNode<Integer> node = new ListNode<Integer>();
+		ListNode<Integer> node2 = node;
+		node2.next = new ListNode<Integer>(10);
+		System.out.println(node2.next.val);
+	}
+	
+	public static int merge(ListNode<Integer> list1, ListNode<Integer> list2) {
+		ListNode<Integer> merged = new ListNode<Integer>();
+		
+	}
+	
+}
+
+class ListNode<T> {
+	public T val;
+	public ListNode<T> next;
+	public ListNode() {}
+	
+	public ListNode(T value) {
+		val = value;
+	}
+	public ListNode(T value, ListNode<T> node) {
+		val = value;
+		next = node;
+	}
+	
+	public String toString() {
+		return val.toString();
+	}
+}

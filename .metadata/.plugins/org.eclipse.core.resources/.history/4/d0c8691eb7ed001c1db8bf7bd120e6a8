@@ -1,0 +1,24 @@
+import java.util.Arrays;
+
+public class Exp {
+	public static void main(String[] args) {
+		System.out.println(Arrays.deepToString(fibonacci(1)));
+	}
+	
+	public static int[][] fibonacci(int rows) {
+		int[][] fib = new int[rows][];
+		
+		for (int i = 0; i < rows; i++) {
+			fib[i] = new int[i + 1];
+			for (int j = 0; j < fib[i].length; j++) {
+				if (j == 0 || j == fib[i].length - 1) {
+					fib[i][j] = 1;
+				}
+				else {
+					fib[i][j] = fib[i - 1][j - 1] + fib[i - 1][j];
+				}
+			}
+		}
+		return fib;
+	}
+}

@@ -1,0 +1,62 @@
+public class Card {
+	int rank;
+	String suit;
+	
+	public Card() {
+		// Ace of Spades is default card
+		this.rank = 1;
+		this.suit = "Spades";
+	}
+	
+	public Card(int rank, String suit) { // Non-default constructor
+		this.rank = rank;
+		this.suit = suit;
+	}
+	
+	// Overriding toString() in Object
+	
+	@Override
+	public String toString() {
+		String rank = "";
+		switch(this.rank) {
+		case 11 :
+			rank = "Jack";
+			break;
+		case 12 :
+			rank = "Queen";
+			break;
+		case 13:
+			rank = "King";
+			break;
+		case 14 :
+			rank = "Ace";
+			break;
+		}
+		return  rank + " of " + this.suit;
+	}
+	
+	@Override
+	public boolean equals(Object other) {
+		if (!(other instanceof Card)) { // Check if object types match
+			return false;
+		}
+		
+		Card otherCard = (Card) other; // other is an object, but it must be treated as card, might be instance of other object, must cast
+		return otherCard.rank == this.rank && otherCard.suit == this.suit;
+	}
+	
+	public static void main(String[] args) {
+		Card c1 = new Card(); // Ace of spades by default
+		Card c2 = new Card(3, "Diamonds"); // 3 of Diamonds
+		System.out.println(c1.toString());
+		c1.rank = 3;
+		c1.suit = "Diamonds";
+		System.out.println(c1);
+		if (c1 == c2) {
+			System.out.println("Will this print??"); // No
+		}
+		if (c1.equals(c2)) {
+			System.out.println("Will this print?"); //Should print if .equals() is overridden for class 
+		}
+	}
+}

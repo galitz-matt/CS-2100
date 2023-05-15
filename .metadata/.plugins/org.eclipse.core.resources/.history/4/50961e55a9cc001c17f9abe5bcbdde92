@@ -1,0 +1,55 @@
+import java.util.Queue;
+import java.util.LinkedList;
+
+public class Exp {
+	
+	private Queue<Integer> stack;
+	private Queue<Integer> helper;
+	private int recent;
+	
+	public Exp() {
+		stack = new LinkedList<Integer>();
+		helper = new LinkedList<Integer>();
+	}
+	
+	public void push(int x) {
+		recent = x;
+		stack.add(recent);
+	}
+	
+	public int pop() {
+		while (stack.size() > 1) {
+			recent = stack.poll();
+			helper.add(recent);
+		}
+		int removed = stack.poll();
+		stack = helper;
+		helper = new LinkedList<Integer>();
+		return removed;
+	}
+	
+	public int top() {
+		if (size() == 0) {
+			return 404;
+		}
+		return recent;
+	}
+	
+	public int size() {
+		return stack.size();
+	}
+	
+	public static void main(String[] args) {
+		Exp st = new Exp();
+		st.push(3);
+		System.out.println(st.top());
+		st.push(2);
+		System.out.println(st.top());
+		st.pop();
+		System.out.println(st.top());
+		st.pop();
+		System.out.println(st.top());
+		System.out.println(st.size());
+	}
+	
+}

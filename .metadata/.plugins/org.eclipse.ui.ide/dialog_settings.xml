@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="NewWizardAction">
+		<item key="NewWizardSelectionPage.STORE_SELECTED_ID" value="org.eclipse.jdt.ui.wizards.JavaProjectWizard"/>
+		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">
+			<item value="org.eclipse.jdt.ui.java"/>
+		</list>
+	</section>
+	<section name="ExternalProjectImportWizard">
+		<item key="WizardProjectsImportPage.STORE_NESTED_PROJECTS" value="false"/>
+		<item key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID" value="false"/>
+		<item key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED" value="false"/>
+		<item key="WizardProjectsImportPage.STORE_CLOSE_CREATED_PROJECTS_ID" value="false"/>
+		<item key="WizardProjectsImportPage.STORE_HIDE_CONFLICTING_PROJECTS_ID" value="false"/>
+		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="C:\Users\16097\Documents\UVA\1st Year\cs_2100\Roomba\Roomba"/>
+		</list>
+		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
+			<item value=""/>
+		</list>
+	</section>
+	<section name="SmartImportWizard">
+		<item key="SmartImportRootWizardPage.STORE_HIDE_ALREADY_OPEN" value="false"/>
+		<item key="SmartImportRootWizardPage.STORE_CLOSE_IMPORTED" value="false"/>
+		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
+		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
+		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="C:\Users\16097\Documents\UVA\1st Year\cs_2100"/>
+			<item value="C:\Users\16097\Documents\UVA\1st Year\cs_2100\Binary Search Tree Assignment\BinarySearchTrees\BinarySearchTrees\src"/>
+			<item value="C:\Users\16097\Documents\UVA\1st Year\cs_2100\Concurrency Assignment\concurrency\Concurrency"/>
+			<item value="C:\Users\16097\Documents\UVA\1st Year\cs_2100\Hash Maps Assignment\HashTables\HashTables"/>
+			<item value="C:\Users\16097\Documents\UVA\1st Year\cs_2100\Heaps Assignment\heaps\PriorityQueues\src"/>
+			<item value="C:\Users\16097\Documents\UVA\1st Year\cs_2100\Heaps Assignment\heaps\PriorityQueues"/>
+			<item value="C:\Users\16097\Documents\UVA\1st Year\cs_2100\Priority Queues Assigment\heaps\PriorityQueues"/>
+			<item value="C:\Users\16097\Documents\UVA\1st Year\cs_2100\Advanced Sorts Assignment\AdvancedSorts\AdvancedSorts\bin"/>
+			<item value="C:\Users\16097\Documents\UVA\1st Year\cs_2100\Advanced Sorts Assignment\AdvancedSorts\AdvancedSorts"/>
+			<item value="C:\Users\16097\Documents\UVA\1st Year\cs_2100\Basic Sorts Assignment\BasicSorts\BasicSorts"/>
+			<item value="C:\Users\16097\Documents\UVA\1st Year\cs_2100\Binary Search Tree Assignment\BinarySearchTrees\BinarySearchTrees"/>
+			<item value="C:\Users\16097\Documents\UVA\1st Year\cs_2100\BigOh Assignment\BigOh\BigOh"/>
+			<item value="C:\Users\16097\Documents\UVA\1st Year\cs_2100\LLists &amp; Queues Assignment\LLStacksQueues\LLStacksQueues"/>
+			<item value="C:\Users\16097\Documents\UVA\1st Year\cs_2100\Stack &amp; Queues Assignment\LLStacksQueues\LLStacksQueues"/>
+			<item value="C:\Users\16097\Documents\UVA\1st Year\cs_2100\Vectors Assignment\Vectors\Vectors"/>
+			<item value="C:\Users\16097\Documents\UVA\1st Year\cs_2100\Blackjack Assignment\blackjack\BlackJack"/>
+			<item value="C:\Users\16097\Documents\UVA\1st Year\cs_2100\Roomba Assignment\Roomba\Roomba"/>
+			<item value="C:\Users\16097\Documents\UVA\1st Year\cs_2100\Code"/>
+		</list>
+	</section>
+</section>

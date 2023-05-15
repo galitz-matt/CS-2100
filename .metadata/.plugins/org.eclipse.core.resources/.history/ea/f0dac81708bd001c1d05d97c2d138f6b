@@ -1,0 +1,98 @@
+package sorting;
+
+import java.util.Arrays;
+
+public class AdvancedSorts {
+	
+	public static void main(String[] args) {
+		Integer[] arr = new Integer[25000];
+		long time;
+		
+		for (int i = 24999; i >= 0; i--) {
+			arr[i] = i;
+		}
+		time = System.currentTimeMillis();
+		quickSort(arr);
+		time = System.currentTimeMillis() - time;
+		System.out.println("Quick Sort: " + time);
+	}
+
+	public static<T extends Comparable<T>> void mergeSort(T[] list) {
+		mergeSort(list, 0, list.length-1);
+	}
+	
+	private static<T extends Comparable<T>> void mergeSort(T[] list, int i, int j) {
+		if (i >= j) { return; }
+		int mid = (i+j)/2;
+		mergeSort(list, i, mid);
+		mergeSort(list, mid+1, j);
+		merge(list, i, mid, j);
+	}
+	
+	private static<T extends Comparable<T>> void merge(T[] list, int i, int mid, int j) {
+		 T[] leftList = (T[]) new Comparable[mid - i + 1];
+		 T[] rightList = (T[]) new Comparable[j - mid];
+		 int l = 0; int r = 0; int index = i;
+		 
+		 for (int k = 0; k < (mid - i + 1); k++) {
+			 leftList[k] = list[k + i];
+		 }
+		 for (int k = 0; k < (j - mid); k++) {
+			 rightList[k] = list[k + mid + 1];
+		 }
+		 
+		 while (l < leftList.length && r < rightList.length) {
+			 if (leftList[l].compareTo(rightList[r]) <= 0) {
+				 list[index] = leftList[l];
+				 l++;
+				 index++;
+			 }
+			 else if (rightList[r].compareTo(leftList[l]) <= 0) {
+				 list[index] = rightList[r];
+				 r++;
+				 index++;
+			 }
+		 }
+		 while (l < leftList.length) {
+			 list[index] = leftList[l];
+			 l++;
+			 index++;
+		 }
+		 while (r < rightList.length) {
+			 list[index] = rightList[r];
+			 r++;
+			 index++;
+		 }
+	}	
+	
+	public static<T extends Comparable<T>> void quickSort(T[] list) {
+		quickSort(list, 0, list.length-1);
+	}
+	
+	private static<T extends Comparable<T>> void quickSort(T[] list, int i, int j) {
+		if (i >= j) { return; }
+		int k = partition(list, i, j);
+		quickSort(list, i, k - 1);
+		quickSort(list, k+1, j);
+	}
+	
+	private static<T extends Comparable<T>> int partition(T[] list, int i, int j) {
+		int h = i; 
+		T temp;
+		
+		for (int k = i; k <= j; k++) {
+			if (list[i].compareTo(list[k]) > 0) {
+				h++;
+				temp = list[h];
+				list[h] = list[k];
+				list[k] = temp;
+			}
+		}
+		
+		temp = list[i];
+		list[i] = list[h];
+		list[h] = temp;
+		return h;
+	}
+
+}

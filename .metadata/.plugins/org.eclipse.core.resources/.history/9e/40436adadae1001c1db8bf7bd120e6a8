@@ -1,0 +1,28 @@
+import java.util.HashMap;
+
+public class Exp {
+	public static void main(String[] args) {
+		System.out.println(mElem(new int[] {6, 5, 5}));
+	}
+	
+	public static int mElem(int[] nums) {
+        HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
+        
+        for (int num : nums) {
+            if (map.containsKey(num)) {
+                map.put(num, map.get(num) + 1);
+            }
+            else {
+                map.put(num, 1);
+            }
+        }
+        
+        int max = nums[0];
+        for (int num : nums) {
+            max = max > map.get(num) ? max : num;
+        }
+        
+        return max;
+    }
+	
+}

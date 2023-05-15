@@ -1,0 +1,15 @@
+import java.util.Arrays;
+
+public class Exp {
+	public static void main(String[] args) {
+		boolean doubleChar = false;
+		while (true) {
+			System.out.println("o");
+			if (doubleChar)
+				System.out.println("ii");
+			else
+				System.out.println("i");
+			doubleChar = !doubleChar;
+		}
+	}
+}

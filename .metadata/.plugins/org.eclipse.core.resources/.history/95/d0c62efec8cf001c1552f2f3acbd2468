@@ -1,0 +1,27 @@
+import java.util.Arrays;
+
+public class Exp {
+	
+	
+	public static void main(String[] args) {
+		int[] test = {1,2,3};
+		System.out.println(Arrays.toString(rotate(test, 1)));
+	}
+	
+	public static int[] rotate(int[] nums, int k) {
+		int front = k % nums.length;
+		int back = nums.length - front;
+		System.out.println(front + " " + back);
+		int[] arr1 = new int[front];
+		int[] arr2 = new int[back];
+		
+		int j = 0;
+		for (int i = nums.length-1; i > back; i++) {
+			System.out.println(nums[i]);
+			arr1[j] = nums[i];
+			j++;
+		}
+		return arr1;
+	}
+	
+}

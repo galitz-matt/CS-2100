@@ -1,0 +1,28 @@
+
+public class Card {
+	int rank;
+	String suit;
+	
+	public Card() {
+		// Ace of Spades is default card
+		this.rank = 1;
+		this.suit = "Spades";
+	}
+	
+	public Card(int rank, String suit) { // Non-default constructor
+		this.rank = rank;
+		this.suit = suit;
+	}
+	
+	// Overriding toString() in Object
+	
+	public String toString() {
+		return "Rank is: " + this.rank + " Suit is: " + this.suit;
+	}
+	
+	public static void main(String[] args) {
+		Card c1 = new Card(); // Ace of spades by default
+		Card c2 = new Card(3, "Diamonds"); // 3 of Diamonds
+		System.out.println(c1.toString());
+	}
+}

@@ -1,0 +1,27 @@
+import java.util.Arrays;
+import java.util.HashMap;
+import java.lang.Math;
+
+public class Exp {
+	public static void main(String[] args) {
+		myAtoi("42");
+	}
+	
+	public static int myAtoi(String s) {
+        int shift = (int) Math.pow(10, s.length());
+        int res = 0;
+        boolean flag = false;
+        
+        for (int i = 0; i < s.length(); i++) {
+            if (s.charAt(i) != 0 && !flag) {
+                flag = true;
+            }
+            if (flag) {
+                res += Character.getNumericValue(s.charAt(i)) * shift;
+                shift /= 10;
+            }
+            System.out.println(res);
+        }
+        return res;
+    }
+}

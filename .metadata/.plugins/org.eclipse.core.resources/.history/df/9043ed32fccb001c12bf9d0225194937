@@ -1,0 +1,68 @@
+package queue;
+
+import java.util.LinkedList;
+import java.util.concurrent.locks.*;
+/**
+ * A Linked-List based Queue
+ * Is concurrent (i.e., can modify front and back in parallel)
+ *
+ * @param <T>
+ */
+public class ConcurrentQueue<T> implements IQueue<T>{
+
+	private LinkedList<T> queue;
+	private Lock queueLock;
+	private Condition nonEmptyCondition;
+	
+	public ConcurrentQueue(){
+		queue = new LinkedList<T>();
+		queueLock = new ReentrantLock();
+		nonEmptyCondition = queueLock.newCondition();
+	}
+	
+	/**
+	 * Return the size by invoking the size of the list
+	 */
+	public int size() { 
+		return queue.size();
+	}
+	
+
+	/**
+	 * Simply add the data to the tail of the linked list
+	 */
+	public void enqueue(T data) {
+		queueLock.lock();
+		
+		try {
+			queue.addLast(data);
+			nonEmptyCondition.signalAll();
+		}
+		finally {
+			queueLock.unlock();
+		}
+	}
+	
+	/**
+	 * Simply remove data from the head of the list
+	 * @throws InterruptedException 
+	 */
+	public T dequeue() {	
+		queueLock.lock();
+		
+		try {
+			while (size() == 0) {
+				nonEmptyCondition.await();
+			}
+		} 
+		catch (InterruptedException e) {
+			System.out.println("InterruptedError");
+		}
+		finally {
+			queueLock.unlock();
+		}
+		return queue.removeFirst();
+	}
+	
+	
+}

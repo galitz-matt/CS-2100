@@ -1,0 +1,66 @@
+package main;
+
+import world.Move;
+import world.Roomba;
+
+public class MyRoomba extends Roomba{
+	
+	private boolean turning = false;
+	private Direction newDir = Direction.NORTH;
+
+	public MyRoomba(int x, int y, int radius) {
+		super(x, y, radius);
+	}
+
+	@Override
+	public Move makeMove() {
+		
+		if(this.turning && this.getDirection() == newDir) {
+			this.turning = false;
+		}
+		
+		if(this.frontBumper && !this.turning) {
+			turning = true;
+			switch(newDir) {
+			case NORTH :
+				if (this.wallSensor)
+					newDir = Direction.SOUTHWEST;
+				else
+					newDir = Direction.SOUTHEAST;
+				break;
+			case EAST :
+				newDir = Direction.values()[(int)(Math.random()*Direction.values().length)];
+				break;
+			case SOUTH :
+				if (this.wallSensor)
+					newDir = Direction.NORTHEAST;
+				else
+					newDir = Direction.NORTHWEST;
+				break;
+			case WEST:
+				newDir = Direction.values()[(int)(Math.random()*Direction.values().length)];
+				if (newDir == Direction.EAST)
+					newDir = Direction.values()[(int)(Math.random()*Direction.values().length)];
+				break;
+			case SOUTHEAST, NORTHEAST :
+				newDir = Direction.WEST;
+				break;
+			case SOUTHWEST, NORTHWEST :
+				newDir = Direction.EAST;
+				break;
+			}
+			return Move.TURNCLOCKWISE;
+		}
+		if (this.infraredSensor < 16) {
+			switch (newDir) {
+			case NORTHEAST, SOUTHEAST :
+				newDir = Direction.EAST;
+			case NORTHWEST, SOUTHWEST:
+				newDir = Direction.WEST;
+			}
+		}
+		if(this.turning) { return Move.TURNCLOCKWISE; }
+		return Move.FORWARD;
+	}
+	
+}

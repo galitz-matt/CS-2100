@@ -1,0 +1,52 @@
+package test;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.Scanner;
+
+import hash.HashTable;
+
+public class WordPuzzleSolver {
+
+	public static void main(String[] args) {
+		
+		/* Kick everything off by calling solve() */
+		try {
+			Scanner in = new Scanner(System.in);
+			String dicFile = in.next();
+			String gridFile = in.next();
+			in.close();
+			new WordPuzzleSolver().solve(dicFile, gridFile);
+		}
+		catch(IOException e) {
+			e.printStackTrace();
+		}
+		
+		
+	}
+	
+	/* Solve the puzzle */
+	private void solve(String dictFile, String gridFile) throws IOException {
+		HashTable table = new HashTable(25500);
+		
+		BufferedReader in = new BufferedReader (new FileReader (dictFile));
+		BufferedReader dimensions = new BufferedReader (new FileReader (gridFile));
+		
+		String result = new String("");
+		int wordsFound = 0;
+		String[] directions = {"N", "E", "S", "W", "NW", "NE", "SW", "SE"};
+		
+		int rows = Integer.valueOf(dimensions.readLine());
+		int columns = Integer.valueOf(dimensions.readLine());
+		
+		char[][] wordSearch = new char[rows][];
+		
+		for (int i = 0; i < rows; i++) {
+			wordSearch[i] = new char[columns];
+			dimensions.read(wordSearch[i], 0, wordSearch[i].length);
+		}
+	}
+	
+	
+}

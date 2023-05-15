@@ -1,0 +1,19 @@
+content_assist_lru_history=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><history maxLHS\="100" maxRHS\="10"><lhs name\="java.lang.Enum"><rhs name\="world.Roomba$Direction"/></lhs><lhs name\="java.lang.constant.Constable"><rhs name\="world.Roomba$Direction"/></lhs><lhs name\="world.Roomba$Direction"><rhs name\="world.Roomba$Direction"/></lhs><lhs name\="list.List"><rhs name\="list.LinkedList"/></lhs><lhs name\="list.LinkedList"><rhs name\="list.LinkedList"/></lhs></history>
+content_assist_number_of_computers=12
+content_assist_proposals_background=241,241,241
+content_assist_proposals_foreground=0,0,0
+eclipse.preferences.version=1
+org.eclipse.jdt.internal.ui.navigator.layout=2
+org.eclipse.jdt.internal.ui.navigator.librariesnode=true
+org.eclipse.jdt.ui.formatterprofiles.version=21
+org.eclipse.jdt.ui.ignorelowercasenames=true
+org.eclipse.jdt.ui.importorder=java;javax;org;com;
+org.eclipse.jdt.ui.ondemandthreshold=99
+org.eclipse.jdt.ui.staticondemandthreshold=99
+org.eclipse.jdt.ui.text.custom_code_templates=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><templates/>
+org.eclipse.jdt.ui.visibility.order=B,V,R,D,
+outlinesortoption=T,SF,SI,SM,F,I,C,M,
+spelling_locale_initialized=true
+typefilter_migrated_2=true
+useAnnotationsPrefPage=true
+useQuickDiffPrefPage=true

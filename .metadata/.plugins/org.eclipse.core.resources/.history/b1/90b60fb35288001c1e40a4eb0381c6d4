@@ -1,0 +1,15 @@
+import java.util.Scanner;
+
+public class Exp {
+	public static void main(String[] args ) {
+		Scanner in = new Scanner(System.in);
+		int num = in.nextInt();
+		int power = in.nextInt();
+		
+		for (int i = 0 ; i < power - 1; i++) {
+			num *= num;
+		}
+		
+		System.out.println(num);
+	}
+}

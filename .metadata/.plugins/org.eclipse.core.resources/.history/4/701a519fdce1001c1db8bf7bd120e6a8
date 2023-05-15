@@ -1,0 +1,30 @@
+import java.util.HashMap;
+import java.util.Arrays;
+
+public class Exp {
+	public static void main(String[] args) {
+		System.out.println(mElem(new int[] {3, 2, 3}));
+	}
+	
+	public static int mElem(int[] nums) {
+        Arrays.sort(nums);
+        
+        int[] ph = {nums[0], 0};
+        int[] max = {0, 0};
+        
+        for (int n : nums) {
+        	if (n == ph[0]) {
+        		ph[1]++;
+        	}
+        	if (ph[1] > max[1]) {
+        		max[0] = ph[0]; max[1] = ph[1];
+        	}
+        	else {
+        		ph[0] = n; ph[1] = 1;
+        	}
+        }
+        
+        return max[0];
+    }
+	
+}

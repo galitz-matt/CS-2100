@@ -1,0 +1,59 @@
+package main;
+
+import world.Move;
+import world.Roomba;
+
+public class MyRoomba extends Roomba{
+	
+	private boolean turning = false;
+	private Direction newDir = Direction.NORTH;
+
+	public MyRoomba(int x, int y, int radius) {
+		super(x, y, radius);
+	}
+
+	@Override
+	public Move makeMove() {
+		Direction lastDir = Direction.NORTH;
+		
+		if(this.turning && this.getDirection() == newDir) {
+			this.turning = false;
+		}
+		
+		if(this.frontBumper && !this.turning) {
+			turning = true;
+			switch(newDir) {
+			case NORTH :
+				newDir = Direction.EAST;
+				lastDir = Direction.NORTH;
+				break;
+			case EAST :
+				newDir = Direction.WEST;
+				while (newDir == lastDir) {
+					newDir = Direction.values()[(int)(Math.random()*Direction.values().length)];
+				}
+				break;
+			case SOUTH :
+				newDir = Direction.WEST;
+				lastDir = Direction.SOUTH;
+				break;
+			case WEST:
+				newDir = Direction.EAST;
+				while (newDir == Direction.EAST) {
+					newDir = Direction.values()[(int)(Math.random()*Direction.values().length)];
+				}
+			case NORTHWEST, NORTHEAST :
+				newDir = Direction.SOUTH;
+				break;
+			case SOUTHWEST, SOUTHEAST :
+				newDir = Direction.NORTH;
+				break;
+			}
+			return Move.TURNCLOCKWISE;
+		}
+		
+		if(this.turning) { return Move.TURNCLOCKWISE; }
+		return Move.FORWARD;
+	}
+	
+}

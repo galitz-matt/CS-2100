@@ -1,0 +1,15 @@
+import java.util.Arrays;
+
+public class Exp {
+	public static void main(String[] args) {
+		int[] nums1 = {1, 2, 3, 4};
+		int[] nums2 = {2, 3, 4, 5}
+		re(nums1, nums2);
+		System.out.println(Arrays.toString(nums1), Arrays.toString(nums2));
+	}
+	public static void re(int[] nums1, int[] nums2) {
+		int[] temp = nums1;
+		nums1 = nums2;
+		nums2 = temp;
+	}
+}

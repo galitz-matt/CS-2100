@@ -1,0 +1,24 @@
+
+
+public class Exp {
+	
+	
+	public static void main(String[] args) {
+		int[] test = {1,2,3};
+		System.out.println(rotate(test, 1));
+	}
+	
+	public static int[] rotate(int[] nums, int k) {
+		int front = k % nums.length;
+		int back = nums.length - front;
+		System.out.println(front + " " + back);
+		int[] arr1 = new int[front];
+		int[] arr2 = new int[back];
+		
+		for (int i = nums.length-1; i > back; i++) {
+			arr1[i] = nums[i];
+		}
+		return arr1;
+	}
+	
+}

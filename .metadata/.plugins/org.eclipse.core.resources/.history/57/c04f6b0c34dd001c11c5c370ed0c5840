@@ -1,0 +1,29 @@
+import java.util.ArrayList;
+import java.util.List;
+
+public class Exp {
+	public static void main(String[] args) {
+		System.out.println(pascal(1).toString());
+	}
+	
+	public static List<ArrayList<Integer>> pascal(int numRows) {
+		List<ArrayList<Integer>> rows = new ArrayList<ArrayList<Integer>>();
+		
+		for (int i = 0; i < numRows; i++) {
+			int idx = 0;
+			rows.add(new ArrayList<Integer>());
+			System.out.println(rows.toString());
+			while (idx < i + 1) {
+				if (idx == 0 || idx == i) {
+					rows.get(i).set(idx, 1);
+				}
+				else {
+					rows.get(i).set(idx, rows.get(i - 1).get(idx - 1) + rows.get(i - 1).get(idx));
+				}
+			}
+		}
+		
+		return rows;
+	}
+
+ }

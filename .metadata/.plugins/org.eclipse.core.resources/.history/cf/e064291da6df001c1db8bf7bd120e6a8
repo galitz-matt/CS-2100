@@ -1,0 +1,54 @@
+import java.util.LinkedList;
+import java.util.Iterator;
+
+public class Exp {
+	public static void main(String[] args) {
+		MinStack stack = new MinStack();
+		stack.push(1);
+		stack.push(2);
+		System.out.println(stack.getMin());
+	}
+
+ }
+
+class MinStack {
+	
+	LinkedList<Integer> stack;
+	int min;
+	
+	public MinStack() {
+		stack = new LinkedList<Integer>();
+		min = Integer.MAX_VALUE;
+	}
+	
+	public void push(int val) {
+		if (val < min) {
+			min = val;
+		}
+		stack.addFirst(val);
+	}
+	
+	public void pop() {
+		if (top() == min) {
+			min();
+		}
+		stack.removeFirst();
+	}
+	
+	public int top() {
+		return stack.peek();
+	}
+	
+	public int getMin() {
+		return min;
+	}
+	
+	public void min() {
+		Iterator<Integer> it = stack.iterator();
+		System.out.println(it.next());
+		while (it.hasNext()) {
+			min = min < it.next() ? min : it.next();
+		}
+	}
+	
+}

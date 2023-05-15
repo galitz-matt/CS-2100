@@ -1,0 +1,22 @@
+
+
+public class Exp {
+	
+	
+	public static void main(String[] args) {
+		System.out.println(new int[] {1,2,3});
+	}
+	
+	public static int[] rotate(int[] nums, int k) {
+		int front = k % nums.length;
+		int back = nums.length - front;
+		int[] arr1 = new int[front];
+		int[] arr2 = new int[back];
+		
+		for (int i = nums.length-1; i >= back; i++) {
+			arr1[i] = nums[i];
+		}
+		return arr1;
+	}
+	
+}

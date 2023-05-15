@@ -1,0 +1,27 @@
+import java.util.HashMap;
+import java.util.Arrays;
+
+public class Exp {
+	
+	public static void main(String[] args) {
+		int[] arr = {3, 2, 5};
+		System.out.println(Arrays.toString(twoSum(arr, 6)));
+	}
+	
+	private static int[] twoSum(int[] nums, int target) {
+		HashMap<Integer, Integer> hm = new HashMap<Integer, Integer>();
+		int comp;
+		
+		for (int i = 0; i < nums.length; i++) {
+			comp = target - nums[i];
+			if (hm.containsKey(comp)) {
+				return new int[] {hm.get(comp), i};
+			}
+			else {
+				hm.put(nums[i], i);
+				System.out.println(hm.toString());
+			}
+		}
+		return new int[] {};
+	}
+}

@@ -1,0 +1,59 @@
+public class FourFunctions {
+	
+	public static void main(String[] args) {
+		System.out.println(mode(new int[] {1,2,3,1,4,5}));
+	}
+	
+	public static double average(int[] nums) {
+		double avg = 0; 
+		for (int num : nums) {
+			avg += (num / nums.length);
+		}
+		return avg;
+	}
+	
+	public static int median(int[] nums) {
+		int placeholder;
+
+		for (int i1 = 0 ; i1 < nums.length ; i1++) {
+			for (int i2 = i1 + 1 ; i2 < nums.length ; i2++) {
+				if (nums[i1] > nums[i2]) {
+					placeholder = nums[i1];
+					nums[i1] = nums[i2];
+					nums[i2] = placeholder;
+				}
+			}	
+		}
+		return nums[3];
+	}
+	
+	public static double stddev(int[] nums) {
+		double average = average(nums);
+		double sd = 0;
+		
+		for (int num : nums) {
+			sd += Math.sqrt((average + num) / nums.length);
+		}
+		return sd;
+	}
+	
+	public static int mode(int[] nums) {
+		int mode = nums[0];
+		int max_count = 0;
+		
+		for (int num1: nums) {
+			int count = 0;
+			for (int num2 : nums) {
+				if (num1 == num2) {
+					count += 1;
+				}
+			}
+			if (count > max_count) {
+				max_count = count;
+				mode = num1;
+			}
+		}
+		return mode;
+	}
+				
+}

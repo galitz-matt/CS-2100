@@ -1,0 +1,27 @@
+import java.util.Arrays;
+
+public class Exp {
+	public static void main(String[] args) {
+		System.out.println(Arrays.deepToString(pascal(5)));
+	}
+	
+	public static Integer[][] pascal(int numRows) {
+		int[][] rows = new int[numRows][];
+		
+		for (int i = 0; i < numRows; i++) {
+			rows[i] = new int[i+1];
+			for (int idx = 0; idx < i + 1; idx++) {
+				if (idx == 0 || idx == i) {
+					rows[i][idx] = 1;
+				}
+				else {
+					rows[i][idx] = rows[i - 1][idx - 1] + rows[i - 1][idx];
+				}
+				idx++;
+			}
+		}
+		
+		return rows;
+	}
+
+ }
