@@ -1,4 +1,2 @@
-# CS-2100
-Homeworks
-
-These are assignments from UVA's Data Structures and Algorithms 1 class. The bulk of it is implementing data structures. 
+# CS 2100: Data Structures and Algorithms
+This is a repository of assignments completed in UVA's CS 2100 course.
